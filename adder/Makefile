@@ -9,7 +9,7 @@ CLEAN_TARGETS += *.pb
 CLEAN_TARGETS += .Xil
 CLEAN_TARGETS += xsim.dir
 
-SRC += src/design/fifo.sv
+SRC += ../SystemVerilog/cmp/buffers/fifo/fifo.sv
 SRC += src/design/adder.sv
 SRC += src/design/top_adder_fifo.sv
 
