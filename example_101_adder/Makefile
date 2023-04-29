@@ -83,15 +83,15 @@ wave:
 	@echo "tb_top.arst_n" >> wave.gtkw
 	@echo "tb_top.clk_i" >> wave.gtkw
 	@echo "@22" >> wave.gtkw
-	@echo "tb_top.intf.fifo_1_in[7:0]" >> wave.gtkw
+	@echo "tb_top.intf.inA[7:0]" >> wave.gtkw
 	@echo "@28" >> wave.gtkw
-	@echo "tb_top.intf.fifo_1_in_valid" >> wave.gtkw
-	@echo "tb_top.intf.fifo_1_in_ready" >> wave.gtkw
+	@echo "tb_top.intf.inA_valid" >> wave.gtkw
+	@echo "tb_top.intf.inA_ready" >> wave.gtkw
 	@echo "@22" >> wave.gtkw
-	@echo "tb_top.intf.fifo_2_in[7:0]" >> wave.gtkw
+	@echo "tb_top.intf.inB[7:0]" >> wave.gtkw
 	@echo "@28" >> wave.gtkw
-	@echo "tb_top.intf.fifo_2_in_valid" >> wave.gtkw
-	@echo "tb_top.intf.fifo_2_in_ready" >> wave.gtkw
+	@echo "tb_top.intf.inB_valid" >> wave.gtkw
+	@echo "tb_top.intf.inB_ready" >> wave.gtkw
 	@echo "@22" >> wave.gtkw
 	@echo "tb_top.intf.out[8:0]" >> wave.gtkw
 	@echo "@28" >> wave.gtkw

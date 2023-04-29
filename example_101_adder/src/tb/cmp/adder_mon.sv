@@ -50,27 +50,27 @@ class adder_mon extends uvm_monitor;
 
             forever begin
                 @ (posedge intf.clk_i);
-                if (intf.fifo_1_in_valid & intf.fifo_1_in_ready) begin
+                if (intf.inA_valid & intf.inA_ready) begin
                     adder_rsp_item item;
                     item = new ();
-                    item.inA = intf.fifo_1_in;
+                    item.inA = intf.inA;
                     mon_in_A.put(item);
                 end
             end
 
             forever begin
                 @ (posedge intf.clk_i);
-                if (intf.fifo_2_in_valid & intf.fifo_2_in_ready) begin
+                if (intf.inB_valid & intf.inB_ready) begin
                     adder_rsp_item item;
                     item = new ();
-                    item.inB = intf.fifo_2_in;
+                    item.inB = intf.inB;
                     mon_in_B.put(item);
                 end
             end
 
             forever begin
                 @ (posedge intf.clk_i);
-                if (intf.fifo_3_out_valid & intf.fifo_3_out_ready) begin
+                if (intf.out_valid & intf.out_ready) begin
                     adder_rsp_item item;
                     item = new ();
                     item.out = intf.out;

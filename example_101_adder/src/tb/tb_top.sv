@@ -45,15 +45,15 @@ module tb_top;
     ) top_adder_fifo_dut (
         .clk_i            ( intf.clk_i            ),
         .arst_n           ( intf.arst_n           ),
-        .fifo_1_in        ( intf.fifo_1_in        ),
-        .fifo_1_in_valid  ( intf.fifo_1_in_valid  ),
-        .fifo_1_in_ready  ( intf.fifo_1_in_ready  ),
-        .fifo_2_in        ( intf.fifo_2_in        ),
-        .fifo_2_in_valid  ( intf.fifo_2_in_valid  ),
-        .fifo_2_in_ready  ( intf.fifo_2_in_ready  ),
+        .inA        ( intf.inA        ),
+        .inA_valid  ( intf.inA_valid  ),
+        .inA_ready  ( intf.inA_ready  ),
+        .inB        ( intf.inB        ),
+        .inB_valid  ( intf.inB_valid  ),
+        .inB_ready  ( intf.inB_ready  ),
         .out              ( intf.out              ),
-        .fifo_3_out_valid ( intf.fifo_3_out_valid ),
-        .fifo_3_out_ready ( intf.fifo_3_out_ready )
+        .out_valid ( intf.out_valid ),
+        .out_ready ( intf.out_ready )
     );
 
     ///////////////////////////////////////////////////////////////////////////
@@ -65,9 +65,9 @@ module tb_top;
         arst_n                = 1 ;
         #100                      ;
         arst_n                = 0 ;
-        intf.fifo_1_in_valid  = 0 ;
-        intf.fifo_2_in_valid  = 0 ;
-        intf.fifo_3_out_ready = 0 ;
+        intf.inA_valid  = 0 ;
+        intf.inB_valid  = 0 ;
+        intf.out_ready = 0 ;
         #100                      ;
         arst_n                = 1 ;
         #100                      ;

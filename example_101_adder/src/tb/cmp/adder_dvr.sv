@@ -64,32 +64,32 @@ class adder_dvr extends uvm_driver #(adder_seq_item);
                 adder_seq_item item;
                 dvr_in_A.get(item);
                 // PORAY repeat ($urandom_range(d_min, d_max)) @ (posedge intf.clk_i);
-                intf.fifo_1_in       <= item.inA;
-                intf.fifo_1_in_valid <= '1;
+                intf.inA       <= item.inA;
+                intf.inA_valid <= '1;
                 do @ (posedge intf.clk_i);
-                while (intf.fifo_1_in_ready !== '1);
-                intf.fifo_1_in_valid <= '0;
+                while (intf.inA_ready !== '1);
+                intf.inA_valid <= '0;
             end
 
             forever begin
                 adder_seq_item item;
                 dvr_in_B.get(item);
                 // PORAY repeat ($urandom_range(d_min, d_max)) @ (posedge intf.clk_i);
-                intf.fifo_2_in       <= item.inB;
-                intf.fifo_2_in_valid <= '1;
+                intf.inB       <= item.inB;
+                intf.inB_valid <= '1;
                 do @ (posedge intf.clk_i);
-                while (intf.fifo_2_in_ready !== '1);
-                intf.fifo_2_in_valid <= '0;
+                while (intf.inB_ready !== '1);
+                intf.inB_valid <= '0;
             end
 
             forever begin
                 adder_seq_item item;
                 dvr_in_O.get(item);
                 // PORAY repeat ($urandom_range(d_min, d_max)) @ (posedge intf.clk_i);
-                intf.fifo_3_out_ready <= '1;
+                intf.out_ready <= '1;
                 do @ (posedge intf.clk_i);
-                while (intf.fifo_3_out_valid !== '1);
-                intf.fifo_3_out_ready <= '0;
+                while (intf.out_valid !== '1);
+                intf.out_ready <= '0;
             end
 
         join_none
