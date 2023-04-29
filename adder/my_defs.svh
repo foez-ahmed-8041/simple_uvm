@@ -1,0 +1,1 @@
+`define DATA_IN_WIDTH 8
