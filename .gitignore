@@ -1,0 +1,10 @@
+prj
+*test*.sv
+*.vvp
+*.out
+*.vcd
+*.log
+*.wdb
+*.jou
+*.pb
+xsim.dir
