@@ -16,5 +16,5 @@ jobs:
       uses: dalance/svlint-action@v1
       with:
         files: |
-          *.sv
+          example_101_adder/src/design/adder.sv
 
