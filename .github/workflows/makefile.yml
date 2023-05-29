@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Verilator Sim
-      uses: drom/action-verilator@v0.1.11
+    - name: SystemVerilog Linter
+      uses: dalance/svlint-action@v1.0.2
 
