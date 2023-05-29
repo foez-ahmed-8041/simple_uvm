@@ -14,6 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: configure
+    - name: locate
       run:  echo "$(realpath .)"
-            ls -l
+      
+    - name: list
+      run:  ls -l
