@@ -7,14 +7,14 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  clean-verilog:
     runs-on: ubuntu-latest
-
     steps:
-    - name: SystemVerilog Linter
-      uses: dalance/svlint-action@v1
+    - uses: actions/checkout@v2 # Checkout source
+    - uses: reviewdog/action-setup@v1 # Setup reviewdog
+    - uses: SuibianP/verilog-cleaner@v1 # lint and format
       with:
-        files: |
-          example_101_adder/src/design/adder.sv
-
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: peter-evans/create-pull-request@v3 # Creates pull request with formatting results
+      with:
+        delete-branch: true
